@@ -19,6 +19,12 @@ Usage
 
     python ot2solr.py < dump.txt > synonyms.txt
 
+Contribute
+----------
+
+Source code and issue tracker are available from:
+https://github.com/znerol/ot2solr
+
 License
 -------
 
