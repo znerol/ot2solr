@@ -9,7 +9,7 @@
 #
 # This script is released to the public domain. No rights reserved.
 #
-# See https://github.com/znerol/opendictionary2solr for the latest version.
+# See https://github.com/znerol/ot2solr for the latest version.
 
 import codecs
 import re
