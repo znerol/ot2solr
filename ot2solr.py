@@ -36,6 +36,13 @@ filt = re.compile(r'\([^\)]*\)')
 #
 #from unidecode import unidecode
 
+# Uncomment the following code if you want to load a list of stopwords. Entries
+# containing any of these will not be included in the result. A list of german
+# stopwords is available from:
+# * http://solariz.de/649/deutsche-stopwords.htm
+#
+#stopwords = set([unidecode(word.strip()) for word in codecs.getreader("utf-8")(open("stopwords.txt"))])
+
 #### MAIN SCRIPT: normally no changes are necessary below this line
 
 # Pattern used to strip off comments
@@ -79,6 +86,13 @@ for line in char_stream:
             pass
 
         synonyms.append(word)
+
+    # Do not add entry if it contains stopwords
+    try:
+        if len(stopwords & set(synonyms)) > 0:
+            continue
+    except NameError:
+        pass
 
     if len(synonyms) > 1:
         print ', '.join(synonyms).encode('utf-8')
